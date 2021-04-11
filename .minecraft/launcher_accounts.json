@@ -1,0 +1,28 @@
+{
+  "accounts" : {
+    "d06e6f38397f4e62844939196fcc8372" : {
+      "accessToken" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5NDEwMDdhNmM4ZTQzMDMwMDljN2IzNTRjZjhkZDExNiIsInlnZ3QiOiJlN2ExMTA5MWRjMjY0ODJhOTcwZDZiZDI4MzYzMDc0MiIsInNwciI6IjIxOGJlN2RlMTQ0MTQyOTZiNmZhNmQ3MmYzNGU4NjI4IiwiaXNzIjoiWWdnZHJhc2lsLUF1dGgiLCJleHAiOjE2MTgzMjA0OTcsImlhdCI6MTYxODE0NzY5N30.nDoaCXiWL5Y5F7O8YM8StTuW4C31vRHyrZX8k83sR3w",
+      "eligibleForMigration" : false,
+      "hasMultipleProfiles" : false,
+      "legacy" : false,
+      "localId" : "d06e6f38397f4e62844939196fcc8372",
+      "minecraftProfile" : {
+        "id" : "218be7de14414296b6fa6d72f34e8628",
+        "name" : "FATEx0"
+      },
+      "persistent" : true,
+      "remoteId" : "941007a6c8e4303009c7b354cf8dd116",
+      "type" : "Mojang",
+      "userProperites" : 
+      [
+        {
+          "name" : "preferredLanguage",
+          "value" : "de"
+        }
+      ],
+      "username" : "sascha.wennes@gmx.de"
+    }
+  },
+  "activeAccountLocalId" : "d06e6f38397f4e62844939196fcc8372",
+  "mojangClientToken" : "6fcce1e54c374f5c81487ca0acbf3055"
+}

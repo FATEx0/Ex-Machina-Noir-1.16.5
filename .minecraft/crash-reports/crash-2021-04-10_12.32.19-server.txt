@@ -1,0 +1,158 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 4/10/21 12:32 PM
+Description: Exception while ticking
+
+java.lang.NoSuchFieldError: field_206952_E
+	at net.olafkeijsers.fastleafdecay.FastLeafDecay.notifyNeighbors(FastLeafDecay.java:58) ~[?:v22.1] {re:classloading}
+	at net.olafkeijsers.fastleafdecay.FastLeafDecay$$Lambda$3263/329486770.accept(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:247) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:239) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus$$Lambda$2989/678858277.invoke(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus$$Lambda$2590/2138664305.invoke(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onNeighborNotify(ForgeEventFactory.java:172) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.func_195593_d(World.java:292) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.func_230547_a_(ServerWorld.java:1372) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.markAndNotifyBlock(World.java:236) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_241211_a_(World.java:212) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_180501_a(World.java:176) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_217377_a(World.java:260) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.block.FireBlock.tryCatchFire(FireBlock.java:214) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.block.FireBlock.func_225534_a_(FireBlock.java:155) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.block.AbstractBlock$AbstractBlockState.func_227033_a_(AbstractBlock.java:620) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_205338_b(ServerWorld.java:591) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld$$Lambda$6184/691514974.accept(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.server.ServerTickList.func_205365_a(SourceFile:84) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:336) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:851) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:787) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:118) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:642) [?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_240783_a_(MinecraftServer.java:232) [?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer$$Lambda$6137/439315439.run(Unknown Source) [?:?] {}
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_51] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.olafkeijsers.fastleafdecay.FastLeafDecay.notifyNeighbors(FastLeafDecay.java:58) ~[?:v22.1] {re:classloading}
+	at net.olafkeijsers.fastleafdecay.FastLeafDecay$$Lambda$3263/329486770.accept(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:247) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:239) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus$$Lambda$2989/678858277.invoke(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus$$Lambda$2590/2138664305.invoke(Unknown Source) ~[?:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-4.0.0.jar:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onNeighborNotify(ForgeEventFactory.java:172) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.func_195593_d(World.java:292) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.func_230547_a_(ServerWorld.java:1372) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.markAndNotifyBlock(World.java:236) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_241211_a_(World.java:212) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_180501_a(World.java:176) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.world.World.func_217377_a(World.java:260) ~[?:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.block.FireBlock.tryCatchFire(FireBlock.java:214) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.block.FireBlock.func_225534_a_(FireBlock.java:155) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.block.AbstractBlock$AbstractBlockState.func_227033_a_(AbstractBlock.java:620) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_205338_b(ServerWorld.java:591) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld$$Lambda$6184/691514974.accept(Unknown Source) ~[?:?] {}
+-- Block being ticked --
+Details:
+	Block location: World: (-545,75,53), Chunk: (at 15,4,5 in -35,3; contains blocks -560,0,48 to -545,255,63), Region: (-2,0; contains chunks -64,0 to -33,31, blocks -1024,0,0 to -513,255,511)
+Stacktrace:
+	at net.minecraft.world.server.ServerTickList.func_205365_a(SourceFile:84) ~[?:?] {re:classloading}
+	at net.minecraft.world.server.ServerWorld.func_72835_b(ServerWorld.java:336) ~[?:?] {re:classloading}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayerEntity['FATEx0'/165, l='ServerLevel[New World]', x=-503.95, y=80.00, z=34.80]]
+	Chunk stats: ServerChunkCache: 3178
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-160,78,64), Chunk: (at 0,4,0 in -10,4; contains blocks -160,0,64 to -145,255,79), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 17547 game time, 54616 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 1 (now: false), thunder time: 1 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:851) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:787) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:118) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:642) [?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.func_240783_a_(MinecraftServer.java:232) [?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer$$Lambda$6137/439315439.run(Unknown Source) [?:?] {}
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_51] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 905141384 bytes (863 MB) / 2080374784 bytes (1984 MB) up to 2147483648 bytes (2048 MB)
+	CPUs: 12
+	JVM Flags: 9 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.1.4.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.1.4.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.1.4.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.1.4.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/OptiFine_1.16.5_HD_U_G7.jar OptiFine TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.1.4.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.1
+	Forge: net.minecraftforge:36.1.4
+	FML Language Providers: 
+		javafml@36.1
+		minecraft@1
+	Mod List: 
+		forge-1.16.5-36.1.4-client.jar                    |Minecraft                     |minecraft                     |1.16.5              |DONE      |NOSIGNATURE
+		MouseTweaks-2.14-mc1.16.2.jar                     |Mouse Tweaks                  |mousetweaks                   |2.14                |DONE      |NOSIGNATURE
+		BiomesOPlenty-1.16.4-13.0.0.434-universal.jar     |Biomes O' Plenty              |biomesoplenty                 |1.16.4-13.0.0.434   |DONE      |NOSIGNATURE
+		Jade-1.16.4-2.6.1.jar                             |Jade                          |jade                          |2.6.1               |DONE      |NOSIGNATURE
+		architectury-1.10.139-forge.jar                   |Architectury                  |architectury                  |1.10.139            |DONE      |NOSIGNATURE
+		ftb-gui-library-1605.2.1.41-forge.jar             |FTB GUI Library               |ftbguilibrary                 |1605.2.1.41         |DONE      |NOSIGNATURE
+		jei-1.16.5-7.6.1.75.jar                           |Just Enough Items             |jei                           |7.6.1.75            |DONE      |NOSIGNATURE
+		JustEnoughResources-1.16.3-0.12.0.100.jar         |Just Enough Resources         |jeresources                   |0.12.0.100          |DONE      |NOSIGNATURE
+		forge-1.16.5-36.1.4-universal.jar                 |Forge                         |forge                         |36.1.4              |DONE      |22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		AppleSkin-mc1.16.2-forge-1.0.14.jar               |AppleSkin                     |appleskin                     |1.0.14              |DONE      |NOSIGNATURE
+		invtweaks-1.16.4-1.0.1.jar                        |Inventory Tweaks Renewed      |invtweaks                     |1.16.4-1.0.1        |DONE      |NOSIGNATURE
+		FastLeafDecay-v22.1.jar                           |FastLeafDecay                 |fastleafdecay                 |v22.1               |DONE      |NOSIGNATURE
+		Neat+1.7-27.jar                                   |Neat                          |neat                          |1.7-27              |DONE      |NOSIGNATURE
+		refinedstorage-1.9.12.jar                         |Refined Storage               |refinedstorage                |1.9.12              |DONE      |NOSIGNATURE
+		WailaHarvestability-mc1.16.x-forge-1.1.14.jar     |Waila Harvestability          |wailaharvestability           |1.1.14              |DONE      |NOSIGNATURE
+		journeymap-1.16.5-5.7.1.jar                       |Journeymap                    |journeymap                    |5.7.1               |DONE      |NOSIGNATURE
+	Crash Report UUID: 3adb4154-2b0b-4088-afe9-46ffac1b4d10
+	Player Count: 1 / 8; [ServerPlayerEntity['FATEx0'/165, l='ServerLevel[New World]', x=-503.95, y=80.00, z=34.80]]
+	Data Packs: vanilla, mod:forge, mod:jade, mod:wailaharvestability, mod:architectury, mod:ftbguilibrary (incompatible), mod:jei, mod:mousetweaks, mod:journeymap (incompatible), mod:biomesoplenty, mod:jeresources, mod:appleskin, mod:invtweaks (incompatible), mod:fastleafdecay (incompatible), mod:neat (incompatible), mod:refinedstorage
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'
+	OptiFine Version: OptiFine_1.16.5_HD_U_G7
+	OptiFine Build: 20210305-003221
+	Render Distance Chunks: 12
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: spectrum-master.zip
+	OpenGlVersion: 4.6.0 NVIDIA 461.40
+	OpenGlRenderer: GeForce GTX 1080/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 12

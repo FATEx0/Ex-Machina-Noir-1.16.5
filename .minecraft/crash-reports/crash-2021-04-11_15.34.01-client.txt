@@ -1,0 +1,182 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 4/11/21 3:34 PM
+Description: Tesselating block model
+
+java.lang.ArrayIndexOutOfBoundsException: 6
+	at net.minecraftforge.client.model.pipeline.BakedQuadBuilder.put(BakedQuadBuilder.java:99) ~[?:?] {re:classloading}
+	at appeng.client.render.model.AutoRotatingBakedModel$VertexRotator.processQuad(AutoRotatingBakedModel.java:177) ~[?:8.2.0] {re:classloading}
+	at net.minecraftforge.client.model.pipeline.QuadGatheringTransformer.put(QuadGatheringTransformer.java:66) ~[?:?] {re:classloading}
+	at net.minecraftforge.client.model.pipeline.LightUtil.putBakedQuad(LightUtil.java:110) ~[?:?] {re:classloading}
+	at sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source) ~[?:?] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.optifine.reflect.Reflector.callVoid(Reflector.java:729) ~[?:?] {re:classloading}
+	at net.minecraft.client.renderer.model.BakedQuad.pipe(BakedQuad.java:136) ~[?:?] {re:mixin,re:classloading,xf:OptiFine:default,pl:mixin:APP:appliedenergistics2.mixins.json:unlitquad.BakedQuadAccessor,pl:mixin:A}
+	at appeng.client.render.model.AutoRotatingBakedModel.getRotatedModel(AutoRotatingBakedModel.java:87) ~[?:8.2.0] {re:classloading}
+	at appeng.client.render.model.AutoRotatingBakedModel.getQuads(AutoRotatingBakedModel.java:135) ~[?:8.2.0] {re:classloading}
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModelFlat(BlockModelRenderer.java:190) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer.renderModelFlat(ForgeBlockModelRenderer.java:69) ~[?:?] {re:classloading}
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:101) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderModel(BlockRendererDispatcher.java:83) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher$ChunkRender$RebuildTask.func_228940_a_(ChunkRenderDispatcher.java:907) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher$ChunkRender$RebuildTask.func_225618_a_(ChunkRenderDispatcher.java:734) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher.lambda$runTask$1(ChunkRenderDispatcher.java:191) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher$$Lambda$9316/737773036.apply(Unknown Source) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.uniCompose(CompletableFuture.java:952) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:926) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1624) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1610) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1689) ~[?:1.8.0_51] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157) ~[?:1.8.0_51] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraftforge.client.model.pipeline.BakedQuadBuilder.put(BakedQuadBuilder.java:99) ~[?:?] {re:classloading}
+	at appeng.client.render.model.AutoRotatingBakedModel$VertexRotator.processQuad(AutoRotatingBakedModel.java:177) ~[?:8.2.0] {re:classloading}
+	at net.minecraftforge.client.model.pipeline.QuadGatheringTransformer.put(QuadGatheringTransformer.java:66) ~[?:?] {re:classloading}
+	at net.minecraftforge.client.model.pipeline.LightUtil.putBakedQuad(LightUtil.java:110) ~[?:?] {re:classloading}
+	at sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source) ~[?:?] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.optifine.reflect.Reflector.callVoid(Reflector.java:729) ~[?:?] {re:classloading}
+	at net.minecraft.client.renderer.model.BakedQuad.pipe(BakedQuad.java:136) ~[?:?] {re:mixin,re:classloading,xf:OptiFine:default,pl:mixin:APP:appliedenergistics2.mixins.json:unlitquad.BakedQuadAccessor,pl:mixin:A}
+	at appeng.client.render.model.AutoRotatingBakedModel.getRotatedModel(AutoRotatingBakedModel.java:87) ~[?:8.2.0] {re:classloading}
+	at appeng.client.render.model.AutoRotatingBakedModel.getQuads(AutoRotatingBakedModel.java:135) ~[?:8.2.0] {re:classloading}
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModelFlat(BlockModelRenderer.java:190) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer.renderModelFlat(ForgeBlockModelRenderer.java:69) ~[?:?] {re:classloading}
+-- Block model being tesselated --
+Details:
+	Block: DriveBlock[drive]
+	Block location: World: (-369,73,-133), Chunk: (at 15,4,11 in -24,-9; contains blocks -384,0,-144 to -369,255,-129), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Using AO: false
+Stacktrace:
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:101) ~[?:?] {re:classloading,xf:OptiFine:default}
+
+
+-- Block being tesselated --
+Details:
+	Block: DriveBlock[drive]
+	Block location: World: (-369,73,-133), Chunk: (at 15,4,11 in -24,-9; contains blocks -384,0,-144 to -369,255,-129), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+Stacktrace:
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderModel(BlockRendererDispatcher.java:83) ~[?:?] {re:classloading,xf:OptiFine:default}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['FATEx0'/47, l='ClientLevel', x=-366.30, y=73.00, z=-132.24]]
+	Chunk stats: Client Chunk Cache: 441, 250
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-256,64,-63), Chunk: (at 0,4,1 in -16,-4; contains blocks -256,0,-64 to -241,255,-49), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 205117 game time, 272529 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.func_72914_a(ClientWorld.java:617) ~[?:?] {re:mixin,re:classloading,xf:OptiFine:default,pl:mixin:APP:mixins.sndctrl.json:MixinClientWorld,pl:mixin:A}
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2029) ~[?:?] {re:mixin,pl:accesstransformer:B,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher.lambda$runTask$3(ChunkRenderDispatcher.java:197) ~[?:?] {re:classloading,xf:OptiFine:default}
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher$$Lambda$9352/1629581174.accept(Unknown Source) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:760) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:736) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1624) ~[?:1.8.0_51] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1610) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056) ~[?:1.8.0_51] {}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1689) ~[?:1.8.0_51] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157) ~[?:1.8.0_51] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2685438080 bytes (2561 MB) / 4496293888 bytes (4288 MB) up to 8589934592 bytes (8192 MB)
+	CPUs: 12
+	JVM Flags: 9 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx8G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	ModLauncher: 8.0.9+86+master.3cf110c
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/mixin-0.8.2.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.0.42.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.0.42.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-0.8.2.jar mixin TRANSFORMATIONSERVICE 
+		/OptiFine_1.16.5_HD_U_G7.jar OptiFine TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.0.42.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.0
+	Forge: net.minecraftforge:36.0.42
+	FML Language Providers: 
+		javafml@36.0
+		minecraft@1
+	Mod List: 
+		forge-1.16.5-36.0.42-client.jar                   |Minecraft                     |minecraft                     |1.16.5              |DONE      |NOSIGNATURE
+		QuarkOddities-1.16.3.jar                          |Quark Oddities                |quarkoddities                 |1.16.3              |DONE      |NOSIGNATURE
+		MouseTweaks-2.14-mc1.16.2.jar                     |Mouse Tweaks                  |mousetweaks                   |2.14                |DONE      |NOSIGNATURE
+		BiomesOPlenty-1.16.4-13.0.0.434-universal.jar     |Biomes O' Plenty              |biomesoplenty                 |1.16.4-13.0.0.434   |DONE      |NOSIGNATURE
+		Jade-1.16.4-2.6.1.jar                             |Jade                          |jade                          |2.6.1               |DONE      |NOSIGNATURE
+		treeharvester_1.16.5-2.4.jar                      |Tree Harvester                |treeharvester                 |2.4                 |DONE      |NOSIGNATURE
+		jei-1.16.5-7.6.1.75.jar                           |Just Enough Items             |jei                           |7.6.1.75            |DONE      |NOSIGNATURE
+		fairylights-4.0.5-1.16.5.jar                      |Fairy Lights                  |fairylights                   |4.0.5               |DONE      |NOSIGNATURE
+		Scannable-MC1.16.5-1.7.3.17 (1).jar               |Scannable                     |scannable                     |1.7.3.17            |DONE      |NOSIGNATURE
+		jeiintegration_1.16.5-7.0.1.15.jar                |JEI Integration               |jeiintegration                |7.0.1.15            |DONE      |NOSIGNATURE
+		invtweaks-1.16.4-1.0.1.jar                        |Inventory Tweaks Renewed      |invtweaks                     |1.16.4-1.0.1        |DONE      |NOSIGNATURE
+		Neat+1.7-27.jar                                   |Neat                          |neat                          |1.7-27              |DONE      |NOSIGNATURE
+		collective-1.16.5-2.25.jar                        |Collective                    |collective                    |2.25                |DONE      |NOSIGNATURE
+		journeymap-1.16.5-5.7.1.jar                       |Journeymap                    |journeymap                    |5.7.1               |DONE      |NOSIGNATURE
+		extlights-3.3.jar                                 |Extended Lights               |extlights                     |3.3                 |DONE      |NOSIGNATURE
+		AutoRegLib-1.6-47.jar                             |AutoRegLib                    |autoreglib                    |1.6-47              |DONE      |NOSIGNATURE
+		appliedenergistics2-8.2.0.jar                     |Applied Energistics 2         |appliedenergistics2           |8.2.0               |DONE      |95:58:cc:83:9d:a8:fa:4f:e9:f3:54:90:66:61:c8:ae:9c:08:88:11:52:52:df:2d:28:5f:05:d8:28:57:0f:98
+		OreExcavation-1.8.157.jar                         |Ore Excavation                |oreexcavation                 |1.8.157             |DONE      |e7:68:1c:0d:b9:7e:cf:f8:f3:40:9c:84:c5:39:d7:a4:59:78:b0:6b:c3:fd:b7:4f:69:18:a3:88:e3:76:8c:3f
+		neoncraft-2.1.jar                                 |Neon Craft                    |neoncraft                     |2.1                 |DONE      |NOSIGNATURE
+		worldedit-mod-7.2.4.jar                           |WorldEdit                     |worldedit                     |7.2.4+5723-e3bfc64  |DONE      |NOSIGNATURE
+		architectury-1.10.139-forge.jar                   |Architectury                  |architectury                  |1.10.139            |DONE      |NOSIGNATURE
+		ftb-gui-library-1605.2.1.41-forge.jar             |FTB GUI Library               |ftbguilibrary                 |1605.2.1.41         |DONE      |NOSIGNATURE
+		light-overlay-5.8.0.jar                           |Light Overlay                 |lightoverlay                  |5.8.0               |DONE      |NOSIGNATURE
+		cloth-config-4.11.19-forge.jar                    |Cloth Config v4 API           |cloth-config                  |4.11.19             |DONE      |NOSIGNATURE
+		JustEnoughResources-1.16.3-0.12.0.100.jar         |Just Enough Resources         |jeresources                   |0.12.0.100          |DONE      |NOSIGNATURE
+		forge-1.16.5-36.0.42-universal.jar                |Forge                         |forge                         |36.0.42             |DONE      |22:af:21:d8:19:82:7f:93:94:fe:2b:ac:b7:e4:41:57:68:39:87:b1:a7:5c:c6:44:f9:25:74:21:14:f5:0d:90
+		Quark-r2.4-310.jar                                |Quark                         |quark                         |r2.4-310            |DONE      |NOSIGNATURE
+		AppleSkin-mc1.16.2-forge-1.0.14.jar               |AppleSkin                     |appleskin                     |1.0.14              |DONE      |NOSIGNATURE
+		WailaHarvestability-mc1.16.x-forge-1.1.14.jar     |Waila Harvestability          |wailaharvestability           |1.1.14              |DONE      |NOSIGNATURE
+		DynamicSurroundings-1.16.4-4.0.4.1.jar            |§3Dynamic Surroundings        |dsurround                     |1.16.4-4.0.4.1      |DONE      |b4:98:14:b9:76:55:25:4f:e5:5f:4d:71:90:87:43:5b:f9:d5:3a:02:60:42:5e:da:1f:15:9c:ff:be:a9:7c:77
+	Crash Report UUID: a171da8b-718c-49ee-bf82-b608d639665e
+	Launched Version: 1.16.5-forge-36.0.42
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: ~~ERROR~~ IllegalStateException: Rendersystem called from wrong thread
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: vanilla, mod_resources, file/Compliance+64x+-+Alpha+4.zip, file/Faithful+Dark+UI+1.16.3.zip, file/C64x+-+Lively+Environment.zip, file/Compliance+64x+-+Freshly+Glowy.zip, file/C64x+-+Lower+Grass.zip, file/C64x+-+Real.+Light.zip, quark:emote_resources (incompatible)
+	Current Language: English (US)
+	CPU: 12x Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz
+	OptiFine Version: OptiFine_1.16.5_HD_U_G7
+	OptiFine Build: 20210305-003221
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: SEUS-Renewed-v1.0.1 (1).zip
+	OpenGlVersion: 4.6.0 NVIDIA 461.40
+	OpenGlRenderer: GeForce GTX 1080/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 12

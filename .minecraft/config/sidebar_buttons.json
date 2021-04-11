@@ -1,0 +1,9 @@
+{
+	"ftbguilibrary": {
+		"toggle.gamemode": true,
+		"toggle.rain": true,
+		"toggle.day": true,
+		"toggle.night": true,
+		"toggle.give": true
+	}
+}

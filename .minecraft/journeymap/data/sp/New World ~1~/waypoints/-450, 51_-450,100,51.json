@@ -1,0 +1,18 @@
+{
+  "id": "-450, 51_-450,100,51",
+  "name": "-450, 51",
+  "icon": "waypoint-normal.png",
+  "x": -450,
+  "y": 100,
+  "z": 51,
+  "r": 38,
+  "g": 76,
+  "b": 183,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    "overworld"
+  ],
+  "persistent": true
+}
